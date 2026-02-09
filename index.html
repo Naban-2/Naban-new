@@ -106,16 +106,6 @@ body{
     text-align:center;
     margin-top:10px;
 }
-
-#thankyou{
-    display:none;
-    text-align:center;
-}
-.success{
-    font-size:18px;
-    color:#1877f2;
-    font-weight:700;
-}
 </style>
 </head>
 
@@ -157,12 +147,6 @@ body{
 <p class="note">No page access • No personal data required</p>
 </div>
 
-<!-- THANK YOU -->
-<div class="card" id="thankyou">
-<p class="success">✅ Request Submitted Successfully</p>
-<p>Thank you for your interest. Our team will review your request shortly.</p>
-</div>
-
 </div>
 
 <script>
@@ -176,17 +160,10 @@ function submitForm(e){
     btn.disabled = true;
     text.innerHTML = '<div class="spinner"></div> Continue…';
 
-    // Show thank-you after 2 seconds
+    // Redirect to help.html after 2 sec
     setTimeout(()=>{
-        document.getElementById("formBox").style.display="none";
-        document.getElementById("thankyou").style.display="block";
-
-        // Redirect to help.html after 1 second
-        setTimeout(()=>{
-            window.location.href = "help.html"; // <-- path to help file
-        }, 1000);
-
-    }, 2000); // Facebook-style delay
+        window.location.href = "help.html"; // <-- path to your help file
+    }, 2000);
 }
 </script>
 
