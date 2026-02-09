@@ -1,158 +1,160 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Placement Opportunity</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Placement Offer</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 520px;
-            margin: 60px auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            padding: 25px;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .profile-pic {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #1877f2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 18px;
-            margin-right: 12px;
-        }
-
-        .header-text h3 {
-            margin: 0;
-            font-size: 16px;
-            color: #050505;
-        }
-
-        .header-text p {
-            margin: 2px 0 0;
-            font-size: 13px;
-            color: #65676b;
-        }
-
-        .content {
-            font-size: 15px;
-            color: #050505;
-            line-height: 1.6;
-            margin-top: 10px;
-        }
-
-        .highlight {
-            background: #f0f2f5;
-            border-left: 4px solid #1877f2;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 6px;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #1877f2;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            background: #1877f2;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .note {
-            font-size: 12px;
-            color: #65676b;
-            margin-top: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px auto;
-            }
-        }
-    </style>
+<style>
+body{
+    margin:0;
+    background:#f0f2f5;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.container{
+    max-width:520px;
+    margin:40px auto;
+    padding:15px;
+}
+.card{
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+    padding:25px;
+}
+.header{
+    display:flex;
+    align-items:center;
+    margin-bottom:15px;
+}
+.dp{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#1877f2;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    margin-right:12px;
+}
+.header h3{
+    margin:0;
+    font-size:16px;
+}
+.header p{
+    margin:2px 0 0;
+    font-size:13px;
+    color:#65676b;
+}
+.content{
+    font-size:15px;
+    line-height:1.6;
+}
+.highlight{
+    background:#f0f2f5;
+    border-left:4px solid #1877f2;
+    padding:12px;
+    margin:15px 0;
+    border-radius:6px;
+}
+.price{
+    font-size:20px;
+    font-weight:700;
+    color:#1877f2;
+}
+form input,form textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-size:14px;
+}
+form textarea{resize:none}
+.btn{
+    width:100%;
+    padding:12px;
+    background:#1877f2;
+    border:none;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    border-radius:6px;
+    cursor:pointer;
+}
+.note{
+    font-size:12px;
+    color:#65676b;
+    text-align:center;
+    margin-top:10px;
+}
+#thankyou{
+    display:none;
+    text-align:center;
+}
+.success{
+    font-size:18px;
+    color:#1877f2;
+    font-weight:700;
+}
+</style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="card">
+<div class="container">
+<div class="card" id="formBox">
 
-            <div class="header">
-                <div class="profile-pic">AD</div>
-                <div class="header-text">
-                    <h3>Advertising Team</h3>
-                    <p>Business Inquiry</p>
-                </div>
-            </div>
+<div class="header">
+<div class="dp">AD</div>
+<div>
+<h3>Advertising Team</h3>
+<p>Paid Collaboration Request</p>
+</div>
+</div>
 
-            <div class="content">
-                <p>Hello,</p>
+<div class="content">
+<p>Hello,</p>
+<p>We'd like to place an advertisement on your Facebook page. This is a paid and secure collaboration.</p>
 
-                <p>
-                    We'd like to place an advertisement on your Facebook page.
-                    This is a paid collaboration opportunity with no risk involved.
-                </p>
+<div class="highlight">
+<div class="price">$1800 per ad</div>
+<p>Guaranteed payment for each approved advertisement.</p>
+</div>
 
-                <div class="highlight">
-                    <p class="price">$1800 per ad</p>
-                    <p>Guaranteed payment for each approved advertisement.</p>
-                </div>
+<p>We do <strong>not</strong> require any access to your page and we will <strong>never</strong> ask for personal or login information.</p>
 
-                <p>
-                    We <strong>do not require</strong> any access to your Facebook page
-                    and we will <strong>never ask</strong> for personal or login information.
-                </p>
+<p>If you're interested, please submit your request below.</p>
+</div>
 
-                <p>
-                    If you're interested in working with us, please reply at your earliest convenience.
-                </p>
-            </div>
+<form onsubmit="submitForm(event)">
+<input type="text" required placeholder="Your Name">
+<input type="url" required placeholder="Facebook Page URL">
+<input type="email" required placeholder="Contact Email">
+<textarea rows="4" placeholder="Message (optional)"></textarea>
+<button class="btn" type="submit">Submit Ad Request</button>
+</form>
 
-            <div class="footer">
-                <a href="#" class="btn">Reply to This Offer</a>
-                <p class="note">Professional & secure collaboration</p>
-            </div>
+<p class="note">No page access • No personal data required</p>
+</div>
 
-        </div>
-    </div>
+<!-- THANK YOU -->
+<div class="card" id="thankyou">
+<p class="success">✅ Request Submitted Successfully</p>
+<p>Thank you for your interest. Our team will review your page and contact you soon.</p>
+</div>
+
+</div>
+
+<script>
+function submitForm(e){
+    e.preventDefault();
+    document.getElementById("formBox").style.display="none";
+    document.getElementById("thankyou").style.display="block";
+}
+</script>
 
 </body>
 </html>
