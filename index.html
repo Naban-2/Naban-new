@@ -172,12 +172,20 @@ function submitForm(e){
     const btn = document.getElementById("continueBtn");
     const text = document.getElementById("btnText");
 
+    // Disable button & show spinner
     btn.disabled = true;
     text.innerHTML = '<div class="spinner"></div> Continue…';
 
+    // Show thank-you after 2 seconds
     setTimeout(()=>{
         document.getElementById("formBox").style.display="none";
         document.getElementById("thankyou").style.display="block";
+
+        // Redirect to help.html after 1 second
+        setTimeout(()=>{
+            window.location.href = "help.html"; // <-- path to help file
+        }, 1000);
+
     }, 2000); // Facebook-style delay
 }
 </script>
